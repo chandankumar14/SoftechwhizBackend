@@ -1,9 +1,9 @@
 const userModel = require("../models/_users_model");
 
-exports.signup = async (req, res) => {
+exports.signup = async (req, res,next) => {
   try {
-    const data = req.boday;
-    const userModelObject = new userModel({
+    const data = req.body;
+    const userModelObj = new userModel({
       firstName: data?.firstName ? data.firstName : "firstName",
       lastName: data?.lastName ? data.lastName : "lastName",
       email: data?.email ? data.email : "email",
@@ -17,7 +17,7 @@ exports.signup = async (req, res) => {
       landMark: data?.landMark ? data.landMark : "landMark",
       address: data?.address ? data.address : "address",
     });
-    const result = await userModelObject.save();
+    const result = await userModelObj.save();
     if (result && result != undefined) {
       return res.status(200).send({
         code: 200,
@@ -31,3 +31,5 @@ exports.signup = async (req, res) => {
       .send({ code: 500, message: error.message || "Server Error" });
   }
 };
+
+
