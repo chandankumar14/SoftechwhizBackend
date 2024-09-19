@@ -12,7 +12,9 @@ exports.createProduct = async (req, res) => {
       quantity: product?.quantity ? product.quantity : null,
       price: product?.price ? product.price : null,
       inStock: product?.inStock ? product.inStock : true,
-      productImage: product?.productImage ? product.productImage : null,
+      productImage: req?.file?.filename
+      ? req.file.filename
+      : req.body.files,
       productDescription: product?.productDescription
         ? product.productDescription
         : null,
