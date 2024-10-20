@@ -1,6 +1,4 @@
 const productModel = require("../models/_product_model");
-const productCategoriesModel = require("../models/_product_categories_model");
-const productVariantModel = require("../models/_product_variant_model");
 
 exports.createProduct = async (req, res) => {
   try {
@@ -12,9 +10,21 @@ exports.createProduct = async (req, res) => {
       quantity: product?.quantity ? product.quantity : null,
       price: product?.price ? product.price : null,
       inStock: product?.inStock ? product.inStock : true,
-      productImage: req?.file?.filename
-      ? req.file.filename
-      : req.body.files,
+      modelFrontShot: req?.modelFrontShot?.filename
+        ? req.modelFrontShot.filename
+        : req.body.modelFrontShot,
+      modelRightSideShot: req?.modelRightSideShot?.filename
+        ? req.modelRightSideShot.filename
+        : req.body.modelRightSideShot,
+      modelLeftSideShot: req?.modelLeftSideShot?.filename
+        ? req.modelLeftSideShot.filename
+        : req.body.modelLeftSideShot,
+      modelBackSideShot: req?.modelBackSideShot?.filename
+        ? req.modelBackSideShot.filename
+        : req.body.modelBackSideShot,
+      modelAngle45Shot: req?.modelAngle45Shot?.filename
+        ? req.modelAngle45Shot.filename
+        : req.body.modelAngle45Shot,
       productDescription: product?.productDescription
         ? product.productDescription
         : null,

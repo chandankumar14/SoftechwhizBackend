@@ -2,9 +2,6 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 const productCategoriesSchema = new Schema(
   {
-    _id: {
-      type: String,
-    },
     categoryName: {
       type: String,
     },
@@ -14,6 +11,9 @@ const productCategoriesSchema = new Schema(
     categoryLayout: {
       type: String,
     },
+    categoryId:{
+      type: String,
+    },
     isDeleted: {
       type: Boolean,
     },
@@ -21,4 +21,4 @@ const productCategoriesSchema = new Schema(
   { timestamps: true }
 );
 
-module.exports = mongoose.model("productcategories", productCategoriesSchema);
+module.exports = mongoose.model("categories", productCategoriesSchema);

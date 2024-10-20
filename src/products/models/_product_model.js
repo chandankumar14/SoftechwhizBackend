@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 const productSchema = new Schema(
   {
-    
+
     productName: {
       type: String,
     },
@@ -22,9 +22,22 @@ const productSchema = new Schema(
     inStock: {
       type: Boolean,
     },
-    productImage: {
+    modelFrontShot: {
       type: String,
-      required: true,
+
+    },
+    modelRightSideShot: {
+      type: String,
+
+    },
+    modelLeftSideShot: {
+      type: String,
+    },
+    modelBackSideShot: {
+      type: String,
+    },
+    modelAngle45Shot: {
+      type: String,
     },
     productDescription: {
       type: String,

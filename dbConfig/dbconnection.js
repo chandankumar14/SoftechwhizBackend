@@ -1,5 +1,4 @@
 const mongoose = require("mongoose");
-
 exports.DataBaseConnection = async () => {
   const HOST = process.env.HOST_URL;
   mongoose

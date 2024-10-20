@@ -41,4 +41,4 @@ const productVariantSchema = new Schema(
   { timestamps: true }
 );
 
-module.exports = mongoose.model("productvariant", productVariantSchema)
+module.exports = mongoose.model("variant", productVariantSchema)
