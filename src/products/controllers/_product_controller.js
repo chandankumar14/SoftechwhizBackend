@@ -10,21 +10,22 @@ exports.createProduct = async (req, res) => {
       quantity: product?.quantity ? product.quantity : null,
       price: product?.price ? product.price : null,
       inStock: product?.inStock ? product.inStock : true,
-      modelFrontShot: req?.modelFrontShot?.filename
-        ? req.modelFrontShot.filename
-        : req.body.modelFrontShot,
-      modelRightSideShot: req?.modelRightSideShot?.filename
-        ? req.modelRightSideShot.filename
-        : req.body.modelRightSideShot,
-      modelLeftSideShot: req?.modelLeftSideShot?.filename
-        ? req.modelLeftSideShot.filename
-        : req.body.modelLeftSideShot,
-      modelBackSideShot: req?.modelBackSideShot?.filename
-        ? req.modelBackSideShot.filename
-        : req.body.modelBackSideShot,
-      modelAngle45Shot: req?.modelAngle45Shot?.filename
-        ? req.modelAngle45Shot.filename
-        : req.body.modelAngle45Shot,
+      modelFrontShot: req?.files?.modelFrontShot
+        ? req?.files.modelFrontShot[0].filename
+        : null,
+      modelRightSideShot: req?.files?.modelRightSideShot
+        ? req?.files?.modelRightSideShot[0].filename
+        : null,
+
+      modelLeftSideShot: req?.files?.modelLeftSideShot
+        ? req?.files?.modelLeftSideShot[0].filename
+        : null,
+      modelBackSideShot: req?.files?.modelBackSideShot
+        ? req?.files?.modelBackSideShot[0].filename
+        : null,
+      modelAngle45Shot: req?.files?.modelAngle45Shot
+        ? req?.files?.modelAngle45Shot[0].filename
+        : null,
       productDescription: product?.productDescription
         ? product.productDescription
         : null,
