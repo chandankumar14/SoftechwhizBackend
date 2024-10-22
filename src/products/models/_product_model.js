@@ -42,7 +42,16 @@ const productSchema = new Schema(
     productDescription: {
       type: String,
     },
-    categoryId: {
+    category: {
+      type: String,
+    },
+    fabric:{
+      type: String, 
+    },
+    dimensions:{
+    type: String, 
+    },
+    distinguishingFeatures:{
       type: String,
     },
     isDeleted: {

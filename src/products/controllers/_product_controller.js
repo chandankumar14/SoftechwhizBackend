@@ -5,6 +5,9 @@ exports.createProduct = async (req, res) => {
     const product = req.body;
     const productPayload = new productModel({
       productName: product?.productName ? product.productName : null,
+      fabric:product?.fabric ? product.fabric : null,
+      dimensions:product?.dimensions ? product.dimensions : null,
+      distinguishingFeatures:product?.distinguishingFeatures ? product.distinguishingFeatures : null,
       productSize: product?.productSize ? product.productSize : null,
       skuCode: product?.skuCode ? product.skuCode : null,
       quantity: product?.quantity ? product.quantity : null,
@@ -29,7 +32,7 @@ exports.createProduct = async (req, res) => {
       productDescription: product?.productDescription
         ? product.productDescription
         : null,
-      categoryId: product?.categoryId ? product.categoryId : null,
+        category: product?.category ? product.category : null,
       isDeleted: product?.isDeleted ? product.isDeleted : false,
     });
     const response = await productPayload.save();
