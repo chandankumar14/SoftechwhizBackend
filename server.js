@@ -35,6 +35,7 @@ app.use(express.urlencoded({ extended: true }));
 /** Routing Configuration is start from here ************ */
 require("./src/users/routes/_routes")(app);
 require("./src/products/routes/_routes")(app);
+require("./src/order/routes/_order_routes")(app);
 const PORT = process.env.SERVER_PORT || 4000;
 app.listen(PORT, () => {
   console.log(` \u001b[1;32m Server is running on port ${PORT}.. \u001b[0m`);

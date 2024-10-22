@@ -37,6 +37,10 @@ const userSchema = new Schema({
     type: String,
     required: true,
   },
+  password: {
+    type: String,
+    required: true,
+  },
 },{ timestamps: true });
 
 module.exports = mongoose.model("users", userSchema);
